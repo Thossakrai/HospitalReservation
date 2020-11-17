@@ -8,9 +8,11 @@ interface PatientDao {
     fun insertPatient(patient: Patient)
 
     @Transaction
-    @Query("SELECT * From patients")
-    fun getPatientWithAppointment() : List<PatientWithAppointments>
+    @Query("SELECT * FROM patients")
+    fun getPatientWithAppointments(): List<PatientWithAppointments>
 
-
+    @Transaction
+    @Query("SELECT * FROM patients")
+    fun getPatientWithAppointmentsAndDoctor(): List<PatientWithAppointmentsAndDoctor>
 
 }

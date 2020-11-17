@@ -8,10 +8,10 @@ import java.util.*
 
 @Entity(tableName = "patients")
 data class Patient(
-    @PrimaryKey private val nationalId: String,
-    private val name: String?,
-    private val lastName: String?,
-    private val birthDate: Date,
+        @PrimaryKey private val nationalId: String,
+        private val name: String?,
+        private val lastName: String?,
+        private val birthDate: Date,
 )
 
 
@@ -19,7 +19,17 @@ data class PatientWithAppointments(
         @Embedded val patient: Patient,
         @Relation(
                 parentColumn = "nationalId",
-                entityColumn = "patientId"
+                entityColumn = "appId"
         )
         val appointment: List<Appointment>
+)
+
+data class PatientWithAppointmentsAndDoctor(
+        @Embedded val patient: Patient,
+        @Relation(
+                entity = Appointment::class,
+                parentColumn = "nationalId",
+                entityColumn = "appId"
+        )
+        val appointmens: List<AppointmentWithDoctor>
 )
