@@ -1,4 +1,4 @@
-package com.thossakrai.kmitlhospital.data
+package com.thossakrai.kmitlhospital.data.model
 
 import androidx.room.Embedded
 import androidx.room.Entity

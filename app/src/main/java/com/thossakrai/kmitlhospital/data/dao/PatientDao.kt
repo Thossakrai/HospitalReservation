@@ -1,6 +1,9 @@
-package com.thossakrai.kmitlhospital.data
+package com.thossakrai.kmitlhospital.data.dao
 
 import androidx.room.*
+import com.thossakrai.kmitlhospital.data.model.Patient
+import com.thossakrai.kmitlhospital.data.model.PatientWithAppointments
+import com.thossakrai.kmitlhospital.data.model.PatientWithAppointmentsAndDoctor
 
 @Dao
 interface PatientDao {
